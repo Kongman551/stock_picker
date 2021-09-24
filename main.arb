@@ -1,0 +1,23 @@
+stock_days = [17,3,6,9,15,8,6,1,10]
+random_arr = [33,7,122,3,1,212,1]
+
+def stock_picker(array)
+	
+	if array.max == array.first
+		second_max = array.max(2) [1]
+		new_array = array.select.with_index do |num, idx|
+			idx != 0 && idx <= array.index(second_max)
+		end		
+	else
+		new_array = array.select.with_index do |num, idx|
+			idx <= array.index(array.max)
+		end
+		
+	end
+	lowest = new_array.min
+	highest = new_array.max
+	puts solution = [array.index(lowest), array.index(highest)]
+end
+
+stock_picker(stock_days)
+stock_picker(random_arr)
